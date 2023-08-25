@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class App {
+
+    public static void main(String[] args) throws Exception {
+        Scanner ler = new Scanner(System.in);
+
+        Evento ev1, ev2, ev3;
+        Aluno aluno1;
+
+        System.out.println("Selecione uma opção: ");
+        int evento = ler.nextInt();
+        System.out.println("1 - Próximo evento");
+        System.out.println("2 - Eventos Futuros");
+        System.out.println("3 - Cadastro para Eventos");
+        switch(evento) {
+            case 1: {
+            ev1 = new Evento();
+            ev1.nome = "Palestra de Direito";
+            ev1.data = "25/09/2023";
+            ev1.local = "Auditório Ibmec Barra";
+            ev1.palestrante = "Professor Igor Julião";
+            ev1.maxParticipantes = 90;
+
+            System.out.println("");
+            System.out.println("ANÚNCIO DE EVENTO");
+            System.out.println("------------------");
+            System.out.println(ev1.nome + " - " + ev1.data);
+            System.out.println("Local: " + ev1.local);
+            System.out.println("Convidado: " + ev1.palestrante);
+
+            break;
+            }
+
+            case 2: {
+
+            ev2 = new Evento();
+            ev2.nome = "Importância das Redes Sociais";
+            ev2.data = "04/10/2023";
+            ev2.local = "Auditório Ibmec Centro";
+            ev2.palestrante = "Carlos Eduardo";
+            ev2.maxParticipantes = 110;
+
+            ev3 = new Evento();
+            ev3.nome = "Campeonato de FIFA";
+            ev3.data = "16/10/2023";
+            ev3.local = "Sala Premium 210 - Barra";
+            ev3.maxParticipantes = 20;
+
+            System.out.println("");
+            System.out.println("ANÚNCIO DE EVENTO");
+            System.out.println("------------------");
+            System.out.println(ev2.nome + " - " + ev2.data);
+            System.out.println("Local: " + ev2.local);
+            System.out.println("Convidado: " + ev2.palestrante);
+
+            System.out.println("");
+            System.out.println("ANÚNCIO DE EVENTO");
+            System.out.println("------------------");
+            System.out.println(ev3.nome + " - " + ev3.data);
+            System.out.println("Local: " + ev3.local);
+            System.out.println("Máximo de jogadores: " + ev3.maxParticipantes);
+
+            break;
+            }
+
+            case 3: {
+                System.out.println("Digite seu nome: ");
+                String nomeAluno = ler.next();
+                System.out.println("Digite sua matrícula: ");
+                String matricula = ler.next();
+                System.out.println("Digite o evento que deseja se cadastrar: ");
+                String nomeEvento = ler.next();
+
+                ev1 = new Evento();
+                ev1.cadastrarAluno(nomeAluno, matricula, nomeEvento);
+            }
+        }
+    }
+}
